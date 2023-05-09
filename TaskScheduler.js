@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 const schedule = require('node-schedule');
 const mongoose = require('mongoose');
 
@@ -14,18 +14,18 @@ const taskSchema = new mongoose.Schema({
 const Task = mongoose.model('Task', taskSchema);
 
 class TaskScheduler {
-  constructor() {
+  constructor(mongodbURL) {
     this.scheduledTasks = [];
-    this.connectToDatabase();
+    this.connectToDatabase(mongodbURL);
   }
 
-  async connectToDatabase() {
+  async connectToDatabase(mongodbURL) {
    
-    const url = process.env.MONGODB_URI;
+   // const url = process.env.MONGODB_URI;
 
-    console.log('connecting to', url)
+    console.log('connecting to', mongodbURL)
     //mongoose.connect(url)
-    mongoose.connect(url,{serverSelectionTimeoutMS:30000})
+    mongoose.connect(mongodbURL,{serverSelectionTimeoutMS:30000})
       .then(result => {
         console.log('connected to MongoDB')
        

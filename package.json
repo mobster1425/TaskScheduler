@@ -1,10 +1,11 @@
 {
   "name": "schedulix",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A lightweight and flexible task scheduler library for JavaScript that allows you to schedule tasks at specific dates and times or on recurring intervals.",
-  "main": "index.js",
+  "main": "TaskScheduler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+   
   },
   "repository": {
     "type": "git",
